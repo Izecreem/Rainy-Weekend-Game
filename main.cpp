@@ -12,22 +12,23 @@ int main() {
     InitWindow(SCRN_W, SCRN_H, "Rainy Weekend Game 1.00 :3");
     SetTargetFPS(60);
     Player player{
-        .speed = 200.0f,
+        .speed = 300.0f,
         .playerPos = {100, 100},
         .size = BLK_SIZE,
-        .vy = 0.00f
+        .vx = 0.0f,
+        .vy = 0.0f
     };
 
     //Main loop
     while (!WindowShouldClose()) {
         float dt = GetFrameTime();
-        char key = keypressed();
+        InputState input = getInput();
 
         BeginDrawing();
         ClearBackground(SYKYCOL);
 
         //Update and draw the player
-        player.update(dt, key);
+        player.update(dt, input);
 
         EndDrawing();
 

@@ -1,7 +1,13 @@
 #ifndef IO_H
 #define IO_H
 
-//Gets the pressed key from raylib
-char keypressed();
+struct InputState {
+    bool left;
+    bool right;
+    bool jump;
+};
+
+// Gets all currently held movement keys.
+InputState getInput();
 
 #endif

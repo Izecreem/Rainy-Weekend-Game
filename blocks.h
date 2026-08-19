@@ -5,6 +5,7 @@ struct Block {
     Vector2 blockPos;
     Color color;
     
+    void render();
 };
 
 

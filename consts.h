@@ -8,6 +8,7 @@ const int SCRN_H = 400;
 const int BLK_SIZE = 20;
 
 const float GRAVITY = 170.0f;
+const float FRICTION = 100.0f;
 
 const Color SYKYCOL{
     0,
