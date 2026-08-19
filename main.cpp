@@ -23,11 +23,12 @@ int main() {
         float dt = GetFrameTime();
         char key = keypressed();
 
-        //Update the player
-        player.update(dt, key);
-
         BeginDrawing();
         ClearBackground(SYKYCOL);
+
+        //Update and draw the player
+        player.update(dt, key);
+
         EndDrawing();
 
     }

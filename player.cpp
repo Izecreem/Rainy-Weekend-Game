@@ -14,8 +14,8 @@ void Player::_move(float dt, char key) {
         playerPos.x += speed * dt;
     }
 
-    if (key == ' ') {
-        vy = -5.0f;
+    if (key == ' ' && playerPos.y >= SCRN_H - size) {
+        vy = -150.0f;
     }
     
     return;
@@ -28,20 +28,20 @@ void Player::_render() {
 
 //Updates Gravity
 void Player::_gravity(float dt) {
-    if (playerPos.y <= SCRN_H || vy == 0.00f) {
-        return;
-    }
-
     vy += GRAVITY * dt;
     playerPos.y += vy * dt;
+
+    if (playerPos.y >= SCRN_H - size) {
+        playerPos.y = SCRN_H - size;
+        vy = 0.0f;
+    }
 }
 
 //Updates the player
 void Player::update(float dt, char key) {
     _move(dt, key);
-    _render();
     _gravity(dt);
+    _render();
     return;
 }
-
 
