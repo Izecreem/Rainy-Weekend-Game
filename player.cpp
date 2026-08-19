@@ -15,6 +15,9 @@ void Player::_move(float dt, const InputState& input) {
         vx += speed * dt;
     }
 
+    // Cap horizontal velocity in both directions before applying movement.
+    vx = std::clamp(vx, -MAX_SPEED, MAX_SPEED);
+
     if (input.jump && playerPos.y >= SCRN_H - size) {
         vy = -150.0f;
     }

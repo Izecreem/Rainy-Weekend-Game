@@ -5,6 +5,7 @@
 #include "player.h" //Gets player
 #include "consts.h" 
 
+
 //main function aka entry point
 int main() {
 
@@ -12,7 +13,7 @@ int main() {
     InitWindow(SCRN_W, SCRN_H, "Rainy Weekend Game 1.00 :3");
     SetTargetFPS(60);
     Player player{
-        .speed = 300.0f,
+        .speed = 350.0f,
         .playerPos = {100, 100},
         .size = BLK_SIZE,
         .vx = 0.0f,

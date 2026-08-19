@@ -3,6 +3,8 @@
 
 #include "io.h"
 
+inline constexpr float MAX_SPEED = 200.0f;
+
 struct Player {
     float speed;
     Vector2 playerPos = {0, 0};
