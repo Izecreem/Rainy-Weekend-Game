@@ -14,7 +14,8 @@ int main() {
     Player player{
         .speed = 200.0f,
         .playerPos = {100, 100},
-        .size = BLK_SIZE
+        .size = BLK_SIZE,
+        .vy = 0.00f
     };
 
     //Main loop
